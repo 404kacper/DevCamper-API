@@ -16,6 +16,9 @@ const bootcamps = require('./routes/bootcamps');
 
 const app = express();
 
+// Body parser
+app.use(express.json());
+
 // Simple logger middleware
 // app.use(logger);
 
@@ -32,7 +35,7 @@ const PORT = process.env.PORT || 5000;
 // To run the server in production mode in package.json file use command SET <env var name> to set it on windows
 const server = app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold)
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.green.bold)
 );
 
 // Handle unhandled promise rejections
